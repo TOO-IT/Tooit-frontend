@@ -98,7 +98,7 @@ function MakeVote() {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization:
-            'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0b29pdEB0b29pdC5jb20iLCJpYXQiOjE2OTIwMTA3NjgsImV4cCI6MTY5MjA5NzE2OCwic3ViIjoia2lteW9vcmEwODI4QGdtYWlsLmNvbSIsImlkIjoxfQ.rdDIfziu71jrX4_LT4RDkdntu38LmlH7wL6af1kKxvA',
+            '',
         },
       })
       .then((response) => {
