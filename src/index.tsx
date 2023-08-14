@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import App from './App';
+
 // import reportWebVitals from './reportWebVitals';
+const queryClient = new QueryClient();
 
 window.Kakao.init('eb0efa26dc3318fbc4fc44e031dd095c');
 
@@ -11,7 +14,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
   </React.StrictMode>,
 );
 

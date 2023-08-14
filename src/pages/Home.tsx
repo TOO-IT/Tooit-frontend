@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SimpleSlider from '../components/Carousel';
 import '../styles/home.scss';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useInView } from 'react-intersection-observer';
+import { useInfiniteQuery } from 'react-query';
 
 function Home() {
   const [category, setCategory] = useState<'new' | 'famous'>('new');
+  const [responseData, setResponseData] = useState(null);
+  const { ref, inView } = useInView({ threshold: 0.3 });
 
   const newBtnHandler = () => {
     setCategory('new');
@@ -15,6 +20,48 @@ function Home() {
     setCategory('famous');
     // TODO: 인기순 정렬
   };
+
+  const getPostInfoListInfinitely = async (
+    lastPostId: number,
+    size: number,
+    category: string,
+  ) => {
+    try {
+      if (category === 'new') {
+        const response = await axios.get(
+          `/tooit/vote?order=newest&lastPostId=${lastPostId}&size=${size}`,
+        );
+        return response.data;
+      } else if (category === 'famous') {
+        const response = await axios.get(
+          `/tooit/vote?order=popularity&lastPostId=${lastPostId}&size=${size}`,
+        );
+        return response.data;
+      }
+    } catch (error) {
+      throw new Error('Failed to fetch data'); // 에러 처리 필요
+    }
+  };
+
+  const {
+    data: postInfoList,
+    fetchNextPage,
+    isFetchingNextPage,
+  } = useInfiniteQuery(
+    ['infinitePostList'],
+    ({ pageParam = 999999 }) =>
+      getPostInfoListInfinitely(pageParam, 20, category), // category 추가
+    {
+      getNextPageParam: (lastPage: { isLast: any; nestLastPostId: any }) =>
+        !lastPage.isLast ? lastPage.nestLastPostId : undefined,
+    },
+  );
+
+  useEffect(() => {
+    if (inView && fetchNextPage) {
+      fetchNextPage();
+    }
+  }, [inView]);
 
   return (
     <div>
@@ -196,6 +243,7 @@ function Home() {
           </div>
         </div>
       </div>
+      {isFetchingNextPage ? <span>내용</span> : <div ref={ref}>끝!</div>}
     </div>
   );
 }
