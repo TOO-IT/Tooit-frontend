@@ -22,8 +22,8 @@ function VoteListItem({
   const { image, stickerCount, name, content, id, stickerList } = item;
 
   function saveHandler() {
-    //  TODO : CORS 에러 해결
     html2canvas(imgItemRef?.current, {
+      scale: 4,
       useCORS: true,
       allowTaint: true,
       ignoreElements: (element) =>
@@ -55,6 +55,10 @@ function VoteListItem({
     setStickerSize(getStickerSize());
   }, [stickerList, isTablet]);
 
+  const imgSrc = `https://d2j21jlzisi105.cloudfront.net/${
+    image.split('.com/')[1]
+  }?timestamp=${new Date().getTime()}`;
+
   return (
     <li className="vote-list__item">
       <div className="vote-list__item-header">
@@ -85,10 +89,14 @@ function VoteListItem({
         className="vote-list__item-img"
       >
         {!!image ? (
-          <img
-            src={image}
-            alt="votedImage"
+          <div
             className="vote-list__item-img__img"
+            style={{
+              backgroundImage: `url(${imgSrc})`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center center',
+            }}
           />
         ) : (
           <h1 className="vote-list__item-img__name">{name}</h1>

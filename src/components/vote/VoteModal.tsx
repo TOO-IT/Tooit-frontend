@@ -86,6 +86,7 @@ function VoteModal({
               className="vote-input-box__nickname"
               placeholder="닉네임을 입력해 주세요."
               disabled={isAnonymous}
+              autoComplete="off"
             />
             <div className="vote-input-box__nickname-checkbox">
               <span>익명</span>

@@ -64,6 +64,11 @@ function VotedSticker({
 
   const mobileLeft = comment ? '50%' : `${STICKER_X}%`;
 
+  const stickerSrc =
+    'https://d2j21jlzisi105.cloudfront.net/' +
+    src.split('.com/')[1] +
+    `?timestamp=${new Date().getTime()}`;
+
   return (
     <>
       <button
@@ -83,7 +88,7 @@ function VotedSticker({
           stickerFocusHandler(sticker);
         }}
       >
-        <img alt="sticker" src={src} />
+        <img alt="sticker" src={stickerSrc} crossOrigin="anonymous" />
       </button>
 
       {isFocused && (
