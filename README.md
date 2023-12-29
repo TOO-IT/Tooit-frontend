@@ -7,8 +7,8 @@
 **프로젝트 기간**
 2023.04 - 2023.10
 
-<img src="https://github.com/TOO-IT/Tooit-frontend/assets/71440070/61b44397-9c4d-4d89-aaaf-eefdcde9b006"  width="15%"/>
-<img src="https://github.com/TOO-IT/Tooit-frontend/assets/71440070/20edfdd4-781e-4936-be10-b725167abb0c"  width="15%"/><img src="https://github.com/TOO-IT/Tooit-frontend/assets/71440070/ea8e2545-a397-4c01-bed5-e1842f3b9b98"  width="15%"/><img src="https://github.com/TOO-IT/Tooit-frontend/assets/71440070/3bd6010d-b4b3-43d4-85ad-d5c4af41830f"  width="15%"/><img src="https://github.com/TOO-IT/Tooit-frontend/assets/71440070/f30a7757-774f-4684-aa18-ebd5743654b8"  width="15%"/>
+<img src="https://github.com/TOO-IT/Tooit-frontend/assets/71440070/61b44397-9c4d-4d89-aaaf-eefdcde9b006"  width="10%"/>
+<img src="https://github.com/TOO-IT/Tooit-frontend/assets/71440070/20edfdd4-781e-4936-be10-b725167abb0c"  width="10%"/><img src="https://github.com/TOO-IT/Tooit-frontend/assets/71440070/ea8e2545-a397-4c01-bed5-e1842f3b9b98"  width="10%"/><img src="https://github.com/TOO-IT/Tooit-frontend/assets/71440070/3bd6010d-b4b3-43d4-85ad-d5c4af41830f"  width="10%"/><img src="https://github.com/TOO-IT/Tooit-frontend/assets/71440070/f30a7757-774f-4684-aa18-ebd5743654b8"  width="10%"/>
 
 ## 기술스택
 
@@ -21,7 +21,7 @@
 
 ### 데모 영상
 
-![화면 기록 2023-10-31 오후 9 43 47 (1)](https://github.com/TOO-IT/Tooit-frontend/assets/71440070/765c4393-75cb-4684-af6c-f2b8df8552ca)
+<img src="https://github.com/TOO-IT/Tooit-frontend/assets/71440070/3edc0dba-1424-433d-9fad-e58cdb379175"  width="100%"/>
 
 ### 로그인 페이지
 

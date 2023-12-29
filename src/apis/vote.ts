@@ -77,3 +77,10 @@ export async function reviewVote({
   const { data } = await client.post('myPage/review', { content, voteId });
   return data;
 }
+
+export async function deleteSticker(voteItemId: number, stickerId: number) {
+  const { data } = await client.delete('sticker', {
+    data: { voteItemId, stickerId },
+  });
+  return data;
+}
